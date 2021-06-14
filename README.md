@@ -1,28 +1,34 @@
 # Holehe Educational purposes only
-![PyPI](https://img.shields.io/pypi/v/holehe) ![PyPI - Week](https://img.shields.io/pypi/dw/holehe) ![PyPI - Downloads](https://static.pepy.tech/badge/holehe) ![PyPI - License](https://img.shields.io/pypi/l/holehe)
-#### For BTC Donations : 1FHDM49QfZX6pJmhjLE5tB2K6CaTLMZpXZ
+
+#### Docker port from https://github.com/megadose/holehe
 ### Holehe [does not alert the target email](https://github.com/megadose/holehe/issues/12)
 holehe allows you to check if the mail is used on different sites like twitter, instagram and will retrieve information on sites with the forgotten password function.
 
 ![](https://files.catbox.moe/5we2ya.png)
 ![](https://github.com/megadose/gif-demo/raw/master/holehe-demo.gif)
-## Project example : [Holehe Maltego](https://github.com/megadose/holehe-maltego)
+
 ## 💡 Prerequisite
 
-   [Python 3](https://www.python.org/downloads/release/python-370/)
+   docker is installed
 
 ## 🛠️ Installation
 
-### With PyPI
+### From docker hub
 
 ```pip3 install holehe```
 
-### With Github
+### From Dockerfile
 
 ```bash
-git clone https://github.com/megadose/holehe.git
+docker run --rm -ti mrnonoss/holehe holehe test@gmail.com
+```
+
+### From sources
+
+```bash
+git clone https://github.com/MrNonoss/holehe
 cd holehe/
-python3 setup.py install
+docker build . -t holehe
 ```
 
 ## 📚 Example
@@ -31,31 +37,7 @@ python3 setup.py install
 holehe test@gmail.com
 ```
 
-
 ### Rate limit, just change your IP
-
-## 📈 Example of use
-
-```python
-import trio
-import httpx
-
-from holehe.modules.shopping.ebay import ebay
-
-
-async def main():
-    email = "test@gmail.com"
-    out = []
-    client = httpx.AsyncClient()
-
-    await ebay(email, client, out)
-
-    print(out)
-    await client.aclose()
-
-trio.run(main)
-```
-
 
 ## The output of the modules
 
@@ -69,6 +51,7 @@ The result of the modules is in this form : `` {name:"example","rateLimit":False
 
 ## Thank you to :
 
+- [megadose](https://github.com/megadose)
 - [navlys](https://twitter.com/navlys_/)
 - [Chris](https://twitter.com/chris_kirsch)
 - [socialscan](https://pypi.org/project/socialscan/)

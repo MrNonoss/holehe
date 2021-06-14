@@ -15,20 +15,22 @@ holehe allows you to check if the mail is used on different sites like twitter, 
 
 ### From docker hub
 
-```pip3 install holehe```
+```docker run --rm -ti mrnonoss/holehe holehe test@gmail.com```
 
 ### From Dockerfile
 
 ```bash
-docker run --rm -ti mrnonoss/holehe holehe test@gmail.com
+git clone https://github.com/MrNonoss/holehe-docker
+cd holehe/
+docker build . -t holehe
 ```
 
 ### From sources
 
 ```bash
-git clone https://github.com/MrNonoss/holehe
+git clone https://github.com/megadose/holehe.git
 cd holehe/
-docker build . -t holehe
+python3 setup.py install
 ```
 
 ## 📚 Example

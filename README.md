@@ -21,7 +21,7 @@ holehe allows you to check if the mail is used on different sites like twitter, 
 
 ```bash
 git clone https://github.com/MrNonoss/holehe-docker
-cd holehe/
+cd holehe-docker/
 docker build . -t holehe
 ```
 
